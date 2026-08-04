@@ -1,40 +1,24 @@
-nombreCliente = input("Ingrese el nombre del cliente: ")
-serviciosOfrecidos = {
-    "limpieza" : 50000,
-    "vacunacion" :  20000,
-    "desparasitacion" : 50000,
-    "revisionFisica" : 100000
-}
+print("FACTURACIÓN VETERINARIA")
+propietario = input("Nombres Propietario: ")
+mascota = input("Nombre Mascota: ")
+valorConsulta = float(input("Valor de la consulta: $"))
+valorMedicamentos = float(input("Valor de medicamentos o exámenes: "))
 
-serviciosRealizados = []
-total = 0
+iva = 0.19
+subtotal = valorConsulta + valorMedicamentos
+valorIva = subtotal * iva
+total = subtotal + valorIva
 
-print("-----¡Servicios Disponibles!-----")
-for servicio, precio in serviciosOfrecidos.items():
-    print(f"* {servicio} : {precio}")
-print("Ingrese los servicios prestados (escriba fin para generar factura)")
-
-while True:
-    entrada = input("> ")
-    if entrada == "fin":
-        break
-    
-    if entrada in serviciosOfrecidos:
-        precio = serviciosOfrecidos[entrada]
-        serviciosRealizados.append((entrada, precio))
-        total+= precio
-        print(f"servicio {entrada} agregado {precio}")
-    else:
-        print("El servicio no esta en la lista. ingrese de nuevo")
-iva = total * 0.19      
-totalConIva = total + iva
-
-print("--------FACTURA DE VENTA--------")
-print("--------------------------------")
-print(f"CLIENTE: {nombreCliente}.")
-    
-if serviciosRealizados:
-    for servicio, precio in serviciosRealizados:
-        print(f" * {servicio} ---------- ${precio}")
-    print(f"${totalConIva}.")
-    
+print("==============================")
+print("   FACTURA SERVICIO PRESTADO   ")
+print("==============================")
+print(f"PROPIETARIO: {propietario}")
+print(f"MASCOTA: {mascota}")
+print("==============================")
+print(f"VALOR CONSULTA: {valorConsulta:,.0f}")
+print(f"VALOR MEDICAMENTOS: {valorMedicamentos:,.0f}")
+print(f"SUBTOTAL: {subtotal:,.0f}")
+print(f"IVA 19%: {valorIva:,.0f}")
+print("==============================")
+print(f"TOTAL A PAGAR: {total:,.0f}")
+print("==============================")
