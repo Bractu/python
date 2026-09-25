@@ -11,10 +11,10 @@ while True:
     num1 = float(input("Ingrese el primer número > "))
     num2 = float(input("Ingrese el segundo número > "))
     print("""         MENÚ
-         1: SUMA 
-         2: RESTA 
-         3: MULTIPLICACION 
-         4: DIVISION""")
+        1: SUMA 
+        2: RESTA 
+        3: MULTIPLICACION 
+        4: DIVISION""")
     
     opcion = int(input("Escoge la opcion: "))
     if opcion == 1:
@@ -36,9 +36,3 @@ while True:
     if opcion == 5:
             print("Has escogido Finalizar")
             break
-    
-   
-        
-    
-
-
